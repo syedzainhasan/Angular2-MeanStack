@@ -1,0 +1,101 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-brand" >PharmaTech</div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li>
+            <a class="nav-link" >Home
+              
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" >About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" >Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" >Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+<div class="nav-side-menu">
+    <div class="brand"><i class="fa fa-image fa-lg"></i> <p>Abdullah</p> </div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+  
+        <div class="menu-list">
+  
+            <ul id="menu-content" class="menu-content collapse out">
+                <li routerLink="dashboard">
+                  <a >
+                  <i class="fa fa-dashboard fa-lg"></i> Dashboard
+                  </a>
+                </li>
+
+                <li  data-toggle="collapse" data-target="#products" class="collapsed">
+                  <a ><i class="fa fa-cart-arrow-down fa-lg"></i> Sale <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="products">
+                    <li><a >Retail Sale</a></li>
+                    <li><a >Whole Sale</a></li>
+                  
+                    
+                </ul>
+
+
+                <li data-toggle="collapse" data-target="#service" class="collapsed">
+                  <a ><i class="fa fa-registered fa-lg"></i> Register<span class="arrow"></span></a>
+                </li>  
+                <ul class="sub-menu collapse" id="service">
+                  <li routerLink="customer-register" >Customer</li>
+                  <li routerLink="register-supplier">Supplier</li>
+                  <li routerLink="register-doctor" >Doctor</li>
+                  <li routerLink="register-agent">Agent</li>
+                  <li routerLink="register-employee">Employee</li>
+                  
+                </ul>
+
+
+                <li data-toggle="collapse" data-target="#new" class="collapsed">
+                  <a ><i class="fa fa-edit fa-lg"></i> Edit Product <span class="arrow"></span></a>
+                </li>
+                <ul class="sub-menu collapse" id="new">
+                  <li >Customer</li>
+                  <li>Supplier</li>
+                  <li>Doctor</li>
+                  <li>Agent</li>
+                  <li>Employee</li>
+                  
+                </ul>
+
+
+                 <li>
+                  <a>
+                  <i class="fa fa-user fa-lg"></i> Inquiries
+                  </a>
+                  </li>
+
+                 <li>
+                  <a >
+                  <i class="fa fa-users fa-lg"></i> Profiles
+                  </a>
+                </li>
+            </ul>
+     </div>
+</div>
+
+
+<div class="container">
+
+  <router-outlet></router-outlet>
+</div>
+

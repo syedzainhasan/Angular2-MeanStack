@@ -1,0 +1,108 @@
+
+
+<div class="contentss">
+  <form novalidate (ngSubmit)="onSubmit(register_employee)" [formGroup]="register_employee" >
+  <p-panel header="Register Employee" [ngStyle]="{background:'red'}">
+    <div class="row mb-3">
+        <div class="col-sm-2"><strong>Firstname</strong></div>
+        <div class="col-sm-3" ><input type="text" pInputText  formControlName="Firstname"/></div>
+        <div class="col-sm-3 error"  *ngIf="register_employee.get('Firstname').hasError('required')  &&  register_employee.get('Firstname').touched"> <span class="fa fa-close"></span>  First name is required </div>
+        
+      </div>
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>Lastname</strong></div>
+      <div class="col-sm-3"><input type="text" pInputText formControlName="Lastname"/></div>
+      <div class="col-sm-3 error"  *ngIf="register_employee.get('Lastname').hasError('required')  &&  register_employee.get('Lastname').touched"> <span class="fa fa-close"></span> Last name is required </div>
+      
+    </div>
+    <hr/>
+  
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>Gender</strong></div>
+      
+    </div>
+  
+    <div class="row mb-3">
+      <div class="col-sm-2"><p-radioButton name="group2" value="Male" label="Male" inputId="preopt1" formControlName="Gender" ></p-radioButton></div>
+      <div class="col-sm-2 text-right"><p-radioButton name="group2" value="Female" label="Female" inputId="preopt1" formControlName="Gender"></p-radioButton></div>
+      
+
+    </div>
+    <hr/>
+  
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>Address</strong></div>
+      <div class="col-sm-3"><input type="text" pInputText formControlName="Adress"/></div>
+      <div class="col-sm-5 error"  *ngIf="register_employee.get('Adress').hasError('required')  &&  register_employee.get('Adress').touched"> <span class="fa fa-close"></span> Adress is required </div>
+      
+    </div>
+    <hr/>
+    
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>EmailID</strong></div>
+      <div class="col-sm-3"><input type="text" pInputText formControlName="EmailID" 
+        
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        /></div>
+      <div class="col-sm-5 optional"  *ngIf=" register_employee.get('EmailID').hasError('pattern')"> <span class="fa fa-warning"></span> wrong pattern (***@****.***) </div>
+      
+    </div>
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>Phone#</strong></div>
+      <div class="col-sm-3"><input type="text" pInputText formControlName="Phone"  
+        required
+        pattern="[0-9]{7,11}$" /></div>
+      <div class="col-sm-5 error"  *ngIf="register_employee.get('Phone').hasError('required') && (register_employee.get('Phone').touched ) "> <span class="fa fa-close"></span> Contact Number is required </div>
+      <div class="col-sm-5 optional"  *ngIf="register_employee.get('Phone').hasError('pattern') "> <span class="fa fa-warning"></span> wrong pattern (7-11 digits)</div>
+      
+    </div>
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>Joining Date</strong></div>
+      <div class="col-sm-3"><p-calendar formControlName="JoiningDate"></p-calendar></div>
+      <div class="col-sm-5 error"  *ngIf="register_employee.get('JoiningDate').hasError('required')&&register_employee.get('JoiningDate').touched"> <span class="fa fa-close"></span> Date of birth required </div>
+      
+    </div>
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>CNIC</strong></div>
+      <div class="col-sm-3"><input type="text"  formControlName="CNIC" pInputText/></div>
+      <div class="col-sm-5 error"  *ngIf="register_employee.get('CNIC').hasError('required')&&register_employee.get('CNIC').touched"> <span class="fa fa-close"></span> CNIC is required </div>
+      
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>Salary</strong></div>
+      <div class="col-sm-3"><input type="text"  formControlName="Salary" pInputText/></div>
+      <div class="col-sm-5 error"  *ngIf="register_employee.get('Salary').hasError('required')&&register_employee.get('Salary').touched"> <span class="fa fa-close"></span> Salary is required </div>
+      
+    </div>
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>Password</strong></div>
+      <div class="col-sm-3"><input type="Password"  formControlName="Password" pPassword/></div>
+      <div class="col-sm-5 error"  *ngIf="register_employee.get('Password').hasError('required')&&register_employee.get('Password').touched"> <span class="fa fa-close"></span> Password is required </div>
+      
+    </div>
+
+
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>Designation</strong></div>
+      
+    </div>
+  
+    <div class="row mb-3">
+      <div class="col-sm-2"><p-radioButton name="Employee" value="Employee" label="Employee" inputId="emp" formControlName="Designation" ></p-radioButton></div>
+      <div class="col-sm-2 text-right"><p-radioButton name="Manager" value="Manager" label="Manager" inputId="Manager" formControlName="Designation"></p-radioButton></div>
+      
+
+    </div>
+    
+    <div class="row mb-3">
+        <div class="col-sm-1">
+      <button pButton type="submit" label="Submit" (click)="onTestGet()" [disabled]="register_employee.invalid" class="ui-button-success"></button>
+        </div>
+    </div>
+   
+  </p-panel>
+</form>
+
+<p>Output:{{getDATA}}</p>
+  </div>

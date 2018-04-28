@@ -1,0 +1,80 @@
+
+
+<div class="contentss">
+  <form novalidate (ngSubmit)="onSubmit(register_supplier)" [formGroup]="register_supplier" >
+  <p-panel header="Register Supplier" [ngStyle]="{background:'red'}">
+    <div class="row mb-3">
+        <div class="col-sm-2"><strong>Firstname</strong></div>
+        <div class="col-sm-3" ><input type="text" pInputText  formControlName="Firstname"/></div>
+        <div class="col-sm-3 error"  *ngIf="register_supplier.get('Firstname').hasError('required')  &&  register_supplier.get('Firstname').touched"> <span class="fa fa-close"></span>  First name is required </div>
+        
+      </div>
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>Lastname</strong></div>
+      <div class="col-sm-3"><input type="text" pInputText formControlName="Lastname"/></div>
+      <div class="col-sm-3 error"  *ngIf="register_supplier.get('Lastname').hasError('required')  &&  register_supplier.get('Lastname').touched"> <span class="fa fa-close"></span> Last name is required </div>
+      
+    </div>
+    <hr/>
+  
+    
+    
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>Address</strong></div>
+      <div class="col-sm-3"><input type="text" pInputText formControlName="Adress"/></div>
+      <div class="col-sm-5 error"  *ngIf="register_supplier.get('Adress').hasError('required')  &&  register_supplier.get('Adress').touched"> <span class="fa fa-close"></span> Adress is required </div>
+      
+    </div>
+    <hr/>
+    
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>EmailID</strong></div>
+      <div class="col-sm-3"><input type="text" pInputText formControlName="EmailID" 
+        
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        /></div>
+      <div class="col-sm-5 optional"  *ngIf=" register_supplier.get('EmailID').hasError('pattern')"> <span class="fa fa-warning"></span> wrong pattern (***@****.***) </div>
+      
+    </div>
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>Phone#</strong></div>
+      <div class="col-sm-3"><input type="text" pInputText formControlName="Phone"  
+        required
+        pattern="[0-9]{7,11}$" /></div>
+      <div class="col-sm-5 error"  *ngIf="register_supplier.get('Phone').hasError('required') && (register_supplier.get('Phone').touched ) "> <span class="fa fa-close"></span> Contact Number is required </div>
+      <div class="col-sm-5 optional"  *ngIf="register_supplier.get('Phone').hasError('pattern') "> <span class="fa fa-warning"></span> wrong pattern (7-11 digits)</div>
+      
+    </div>
+
+
+    
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>Company Name</strong></div>
+      <div class="col-sm-3"><input type="text"  formControlName="CompanyName" pInputText/></div>
+      <div class="col-sm-5 error"  *ngIf="register_supplier.get('CompanyName').hasError('required')&&register_supplier.get('CompanyName').touched"> <span class="fa fa-close"></span> HospitalName is required </div>
+      
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>Company Email</strong></div>
+      <div class="col-sm-3"><input type="text" pInputText formControlName="CompanyEmail" 
+        
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        /></div>
+      <div class="col-sm-5 optional"  *ngIf=" register_supplier.get('CompanyEmail').hasError('pattern')"> <span class="fa fa-warning"></span> wrong pattern (***@****.***) </div>
+      
+    </div>
+
+
+
+    <div class="row mb-3">
+        <div class="col-sm-1">
+      <button pButton type="submit" label="Submit"  [disabled]="register_supplier.invalid" class="ui-button-success"></button>
+        </div>
+    </div>
+   
+  </p-panel>
+</form>
+
+<p>Output:{{getDATA}}</p>
+  </div>
