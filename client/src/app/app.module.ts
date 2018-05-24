@@ -23,6 +23,15 @@ import { RegisterAgentComponent } from './register-agent/register-agent.componen
 import { RegisterEmployeeComponent } from './register-employee/register-employee.component';
 import {PasswordModule} from 'primeng/password';
 import {DropdownModule} from 'primeng/dropdown';
+import { AuthService } from './services/auth.service';
+
+import {CardModule} from 'primeng/card';
+import {ChartModule} from 'primeng/chart';
+import { RegisterProductComponent } from './register-product/register-product.component';
+import { RetailsaleComponent } from './retailsale/retailsale.component';
+import { WholesaleComponent } from './wholesale/wholesale.component';
+import { InvoiceWholesaleComponent } from './invoice-wholesale/invoice-wholesale.component';
+
 @NgModule({
   declarations: [
     
@@ -34,6 +43,11 @@ import {DropdownModule} from 'primeng/dropdown';
     RegisterSupplierComponent,
     RegisterAgentComponent,
     RegisterEmployeeComponent,
+    RegisterProductComponent,
+    RetailsaleComponent,
+    WholesaleComponent,
+    InvoiceWholesaleComponent,
+    
    
   ],
   imports: [
@@ -51,10 +65,12 @@ import {DropdownModule} from 'primeng/dropdown';
     InputTextModule,
     CalendarModule,
     PasswordModule,
-    DropdownModule
+    DropdownModule,
+    CardModule,
+    ChartModule
 
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

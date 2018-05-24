@@ -1,0 +1,98 @@
+.eg{
+    
+      
+    margin-top: 5.2%;
+   
+    
+    width:90%;
+   
+    position: absolute;
+
+   padding-left: 6.1%; 
+}
+.invhead{
+    background-color: #00A874;
+    height: 10%;
+    width: 100%
+}
+.invright{
+    height: 300px;
+}
+
+.invtot{
+    background-color: rgba(0, 168, 115, 0.178);
+    height: 13%;
+    width: 100%
+}
+.inv1{
+    margin-top: 1%;
+}
+.btnadd{
+background-color: #00A875 ;
+ width: 10%;
+ margin-left: 90%;
+}
+.btnsave{
+    background-color: #00A875 ;
+    margin-top: 5%;
+    margin-left: 8%;
+}
+.labelyo{
+margin-left: 1%;
+}
+.labelyo1{
+margin-left: 10%;
+}
+.labelyo2{
+margin-left: 20%;
+}
+.toop{
+margin-top: 5%;
+}
+.ww{
+width:5%;
+margin-left: 1%;
+
+}
+.ww3{
+width:5%;
+margin-left: 1.7%;
+
+}
+.ww5{
+    width:5%;
+    margin-left: 6.9%;
+}
+.ww4{
+width:12%;
+margin-left: 2%;
+}
+.ww1{
+width:5%;
+
+}
+
+.error{
+color: #E55151;
+margin-top:5px; 
+margin-left: 5px;
+opacity: 0.7;
+}
+
+
+
+    .optional{
+        color: yellow;
+        margin-top:5px; 
+        
+            }
+.ui-panel .ui-panel-titlebar{
+              background: #00A875;
+              font-size: 20px;
+
+           }
+           
+           .ui-panel
+           {
+               border: 1px solid #00A874
+           }     

@@ -1,5 +1,10 @@
 <div class="contentss" >
-
-    
-
+<div class="graph_allignment" *ngFor="let user of data; ">    
+            <p-card  title="{{user.title}}"   [style]="{width: '300px'}" styleClass="ui-card-shadow">
+                        <p-chart type="{{user.type}}" [data]="user"></p-chart>
+                <p-footer>
+                    <button  (click)='getLarger()' pButton class="allignment" type="button" label="View"></button>
+                   </p-footer>
+            </p-card>
+</div>
 </div>

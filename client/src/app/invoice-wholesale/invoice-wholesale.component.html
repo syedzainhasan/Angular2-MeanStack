@@ -1,0 +1,170 @@
+
+<div class = "eg">
+
+  <form novalidate (ngSubmit)="onSubmit(invoice-wholesale)" [formGroup]="invoice-wholesale" >
+    <p-panel header="WholeSale Invoice">
+      <div class="form-group row">
+        <label for="colFormLabel" class="labelyo col-form-label">Customer Name:</label>
+        <select class="custom-select ww">
+            <option selected>ID</option>
+            <option value="1">1</option>
+          </select>
+        <div class="col-sm-3">
+           
+          <input type="text" class="form-control" id="colFormLabel" placeholder="Name">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="colFormLabel" class="labelyo col-form-label">Agent's Name:</label>
+        <select class="custom-select ww3">
+            <option selected>ID</option>
+            <option value="1">1</option>
+          </select>
+        <div class="col-sm-3">
+           
+          <input type="text" class="form-control" id="colFormLabel" placeholder="Name">
+        </div>
+      </div>
+
+      
+        <div class="form-group row">
+          <label for="colFormLabel" class="labelyo col-form-label">Carrier:</label>
+          <select class="custom-select ww5">
+              <option selected>ID</option>
+              <option value="1">1</option>
+            </select>
+          <div class="col-sm-3">
+             
+            <input type="text" class="form-control" id="colFormLabe" placeholder="Name">
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-8" style="background-color:rgba(0, 168, 118, 0.048);">
+                <div class="form-row">
+                    <label for="colFormLabel" class="labelyo col-form-label">Billing On:</label>
+          <select class="custom-select ww4">
+              <option selected>MRP</option>
+              <option value="1">1</option>
+            </select>
+            <label for="colFormLabel" class="labelyo1 col-form-label">Invoice No:</label>
+            <label for="colFormLabel" class="labelyo2 col-form-label">Date:</label>
+                </div>
+                <div class="form-row toop">
+                    <div class="col-md-4 mb-3">
+                      <label style="font-size: 12px">Product Name</label>
+                      <select class="custom-select ">
+                          <option selected>Select Product</option>
+                          <option value="1">One</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col-md-1 mb-1">
+                      <label style="font-size: 12px">Quantity</label>
+                      <input type="text" class="form-control" id="validationCustom02"  value="0" required>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                    <div class="col-md-1 mb-1">
+                        <label style="font-size: 12px">Packing</label>
+                        <input type="text" class="form-control" id="validationCustom02"  value="0" required>
+                        <div class="valid-feedback">
+                          Looks good!
+                        </div>
+                      </div>
+                      <div class="col-md-1 mb-1">
+                          <label style="font-size: 12px">Batch</label>
+                          <input type="text" class="form-control" id="validationCustom02"  value="0" required>
+                          <div class="valid-feedback">
+                            Looks good!
+                          </div>
+                        </div>
+                        <div class="col-md-1 mb-1">
+                            <label style="font-size: 12px">Disc %</label>
+                            <input type="text" class="form-control" id="validationCustom02"  value="0" required>
+                            <div class="valid-feedback">
+                              Looks good!
+                            </div>
+                          </div>
+                          <div class="col-md-1 mb-1">
+                              <label style="font-size: 12px">Expiry</label>
+                              <input type="text" class="form-control" id="validationCustom02"  value="0" required>
+                              <div class="valid-feedback">
+                                Looks good!
+                              </div>
+                            </div>
+                            <div class="col-md-1 mb-1">
+                                <label style="font-size: 12px">GST %</label>
+                                <input type="text" class="form-control" id="validationCustom02"  value="0" required>
+                                <div class="valid-feedback">
+                                  Looks good!
+                                </div>
+                              </div>
+                              <div class="col-md-2 mb-1">
+                                  <label style="font-size: 12px">Price</label>
+                                  <input type="text" class="form-control" id="validationCustom02"  value="0" required>
+                                  <div class="valid-feedback">
+                                    Looks good!
+                                  </div>
+                                </div>
+                                
+                </div>
+                <button type="button" class="btn btn-primary btnadd" >Add</button>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">S.No</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Discount</th>
+                        <th scope="col">Price</th>
+                      
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>dvxvx</td>
+                        <td>xdvxv</td>
+                        <td>xvxddxv</td>
+                        <td>xvxddxv</td>
+                        
+                      </tr>
+                    </tbody>
+                  </table>
+
+
+              
+            </div>
+            <div class="col-sm-4 border invright" >
+              <div class="invhead"></div>
+                <h6 class="inv1">Total :</h6>
+                <h6 class="inv1">GST Total :</h6>
+                <h6 class="inv1">Discount :</h6>
+                  <div class="border invtot">
+                      <h5 class="inv1">NET VALUE :</h5>
+                  </div>
+                  <p class="inv1" style="margin-top: 3%">Payment Mode <p>
+                  <div class="form-check">
+                      <input class="form-check-input " type="radio"  checked>
+                      <label class="form-check-label" for="gridRadios1">
+                        Cash
+                      </label>
+                      <input  class="form-check-input " type="radio" style="margin-left: 5%" >
+                      <label style="margin-left: 10%">
+                        Credit Card
+                      </label>
+                  </div>
+                  <button type="button" class="btn btn-primary btnsave" >Save</button>
+                  <button type="button" class="btn btn-primary btnsave" >Print</button>
+                  <button type="button" class="btn btn-primary btnsave" >Clear</button>
+                  
+            </div>
+          </div>
+      
+    </p-panel>
+    </form>
+  </div>
+  

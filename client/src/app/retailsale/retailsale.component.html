@@ -1,0 +1,186 @@
+
+<div class = "egs">
+
+        <form novalidate (ngSubmit)="onSubmit(retailsale)" [formGroup]="retailsale" >
+          <p-panel header="Retail Invoice" [ngStyle]="{background:'red'}">
+            <div class="form-group row">
+              <label for="colFormLabel" class="labelyo col-form-label">Customer Name:</label>
+              <select class="custom-select ww"> 
+                  <option selected>ID</option>
+                  <option value="1">1</option>
+                </select>
+              <div class="col-sm-3">
+                 
+                <select class="form-control"  name="Type" >
+            
+                  <option></option>
+                              <option *ngFor="let user of list; let i = index;"  [ngValue]="Names" name="Names" >{{user.Firstname}} </option>
+                             
+                              </select>
+                  
+              </div>
+            </div>
+            <div class="form-group row">
+                <label for="colFormLabel" class="labelyo col-form-label">Doctor's Name:</label>
+                <select class="custom-select ww3">
+                    <option selected>ID</option>
+                    <option value="1">1</option>
+                  </select>
+                <div class="col-sm-3">
+                   
+                  <select class="form-control"  placeholder="Name" name="Type" >
+            
+                    <option></option>
+                                <option *ngFor="let user of doc_list; let i = index;"  [ngValue]="Names" name="Names" >{{user.Firstname}} </option>
+                               
+                                </select>
+                   </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-sm-8" style="background-color:rgba(0, 168, 118, 0.048);">
+                      <div class="form-row">
+                          <label for="colFormLabel" class="labelyo col-form-label">Billing On:</label>
+                <select class="custom-select ww4">
+                    <option selected>MRP</option>
+                    <option value="Tablets">Tablets</option>
+                    <option value="Strips">Strips</option>
+                    <option value="Packs">Packs</option>
+                    <option value="Boxes">Boxes</option>
+                  </select>
+                  <label for="colFormLabel" class="labelyo1 col-form-label">Invoice No:</label>
+                  <label for="colFormLabel" class="col-form-label"><b>1</b></label>
+
+
+
+
+                  <label for="colFormLabel" class="labelyo2 col-form-label">Date:</label>
+                  <label for="colFormLabel" class="col-form-label"><b>{{date_val}}</b></label>
+                      </div>
+                      <div class="form-row toop">
+                          <div class="col-md-4 mb-3">
+                            <label style="font-size: 12px">Product Name</label>
+                           
+
+                            <select class="form-control"  name="Type" >
+            
+                              <option></option>
+                                          <option formControlName= "ProductName" *ngFor="let user of pro_list; let i = index;"  [ngValue]="Product" name="Product" >{{user.Name}} </option>
+                                         
+                                          </select>
+
+                         
+
+
+
+
+
+
+
+
+                          </div>
+                          <div class="col-md-1 mb-1">
+                            <label style="font-size: 12px">Quantity</label>
+                            <input type="text" class="form-control" formControlName="Quantity" id="validationCustom02"  value="0" required>
+                            <div class="valid-feedback">
+                              Looks good!
+                            </div>
+                          </div>
+                          <div class="col-md-1 mb-1">
+                              <label style="font-size: 12px">Packing</label>
+                              <input type="text" class="form-control" formControlName="Packing" id="validationCustom02"  value="0" required>
+                              <div class="valid-feedback">
+                                Looks good!
+                              </div>
+                            </div>
+                            <div class="col-md-1 mb-1">
+                                <label style="font-size: 12px">Batch</label>
+                                <input type="text" class="form-control" id="validationCustom02"   value="0" required>
+                                <div class="valid-feedback">
+                                  Looks good!
+                                </div>
+                              </div>
+                              <div class="col-md-1 mb-1">
+                                  <label style="font-size: 12px">Disc %</label>
+                                  <input type="text" class="form-control" formControlName="Discount" id="validationCustom02"  value="0" required>
+                                  <div class="valid-feedback">
+                                    Looks good!
+                                  </div>
+                                </div>
+                                <div class="col-md-1 mb-1">
+                                    <label style="font-size: 12px">Expiry</label>
+                                    <input type="text" class="form-control" id="validationCustom02"  value="0" required>
+                                    <div class="valid-feedback">
+                                      Looks good!
+                                    </div>
+                                  </div>
+                                  <div class="col-md-1 mb-1">
+                                      <label style="font-size: 12px">GST %</label>
+                                      <input type="text" class="form-control" id="validationCustom02" formControlName="GST"  value="0" required>
+                                      <div class="valid-feedback">
+                                        Looks good!
+                                      </div>
+                                    </div>
+                                    <div class="col-md-2 mb-1">
+                                        <label style="font-size: 12px">Price</label>
+                                        <input type="text" class="form-control" id="validationCustom02" formControlName="Price"  value="0" required>
+                                        <div class="valid-feedback">
+                                          Looks good!
+                                        </div>
+                                      </div>
+                                      
+                      </div>
+                      <button type="button" class="btn btn-primary btnadd" >Add</button>
+                      <table class="table">
+                          <thead>
+                            <tr>
+                              <th scope="col">S.No</th>
+                              <th scope="col">Product</th>
+                              <th scope="col">Quantity</th>
+                              <th scope="col">Discount</th>
+                              <th scope="col">Price</th>
+                            
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td>dvxvx</td>
+                              <td>xdvxv</td>
+                              <td>xvxddxv</td>
+                              <td>xvxddxv</td>
+                              
+                            </tr>
+                          </tbody>
+                        </table>
+
+
+                    
+                  </div>
+                  <div class="col-sm-4 border invright" >
+                    <div class="invhead"></div>
+                      <h6 class="inv1">Total :</h6>
+                      <h6 class="inv1">GST Total :</h6>
+                      <h6 class="inv1">Discount :</h6>
+                        <div class="border invtot">
+                            <h5 class="inv1">NET VALUE :</h5>
+                        </div>
+                        <p class="inv1" style="margin-top: 3%">Payment Mode <p>
+                        <div class="form-check">
+                            <input class="form-check-input " type="radio"  checked>
+                            <label class="form-check-label" for="gridRadios1">
+                              Cash
+                            </label>
+                            <input  class="form-check-input " type="radio" style="margin-left: 5%" >
+                            <label style="margin-left: 10%">
+                              Credit Card
+                            </label>
+                        </div>
+                        
+                  </div>
+                </div>
+            
+          </p-panel>
+          </form>
+        </div>
+        

@@ -1,8 +1,46 @@
 
 
-<div class="contentss">
+<div class="co">
+  
+    <div class="con">
         <form novalidate (ngSubmit)="onSubmit(customer_register)" [formGroup]="customer_register" >
-        <p-panel header="Register Customer" [ngStyle]="{background:'red'}">
+        <p-panel header="{{titlename}}" [ngStyle]="{background:'red'}">
+
+
+
+
+
+
+
+
+  <div class="row mb-3">
+                <div class="col-sm-10" >           
+                  <select (click) ='getName()' (change)='fetchName($event.target.value)' name="Type" [hidden]='yo.body==true '>
+                    
+        <option>Name</option>
+                    <option *ngFor="let user of list; let i = index;"  [ngValue]="Names" name="Names" >{{user.Firstname}}</option>
+                   
+                    </select>
+        
+        
+        
+                </div>
+                <div class="col-sm-2" >
+            <select name="Type" (change)='onClick($event.target.value)'>
+              <option [ngValue]="Register" name="Register" >Register</option>
+              <option  [ngValue]="Edit" >Edit</option>
+              </select>
+        
+              </div>
+            </div>
+        
+
+
+
+
+
+
+
           <div class="row mb-3">
               <div class="col-sm-2"><strong>Firstname</strong></div>
               <div class="col-sm-3" ><input type="text" pInputText  formControlName="Firstname"/></div>
@@ -58,7 +96,7 @@
           </div>
           <div class="row mb-3">
             <div class="col-sm-2"><strong>DOB</strong></div>
-            <div class="col-sm-3"><p-calendar formControlName="DOB"></p-calendar></div>
+            <div class="col-sm-3"><p-calendar> <input formControlName="DOB"></p-calendar></div>
             <div class="col-sm-5 error"  *ngIf="customer_register.get('DOB').hasError('required')&&customer_register.get('DOB').touched"> <span class="fa fa-close"></span> Date of birth required </div>
             
           </div>
@@ -73,7 +111,7 @@
           
           <div class="row mb-3">
               <div class="col-sm-1">
-            <button pButton type="submit" label="Submit" (click)="onTestGet()" [disabled]="customer_register.invalid" class="ui-button-success"></button>
+            <button pButton type="submit" label="{{buttonname}}" (click)="onTestGet()" [disabled]="customer_register.invalid" class="ui-button-success"></button>
               </div>
           </div>
          
@@ -82,3 +120,5 @@
 
       <p>Output:{{getDATA}}</p>
         </div>
+        </div>
+        

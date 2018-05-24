@@ -1,0 +1,129 @@
+
+
+<div class="co">
+  
+  <div class="con">
+  <form novalidate (ngSubmit)="onSubmit(register_product)" [formGroup]="register_product" >
+  <p-panel header="{{titlename}}" [ngStyle]="{background:'red'}">
+
+
+
+      <div class="row mb-3">
+          <div class="col-sm-10" > 
+            <select (click) ='getName()' (change)='fetchName($event.target.value)' name="Type" [hidden]='yo.body==true '>
+              
+              <option>Name</option>
+              <option *ngFor="let user of list; let i = index;"  [ngValue]="Names" name="Names" >{{user.Name}}</option>
+             
+              </select>
+  
+  
+  
+          </div>
+          <div class="col-sm-2" >
+      <select name="Type" (change)='onClick($event.target.value)'>
+        <option [ngValue]="Register" name="Register" >Register</option>
+        <option  [ngValue]="Edit" >Edit</option>
+        </select>
+  
+        </div>
+      </div>
+  
+
+
+
+
+
+    <div class="row mb-3">
+        <div class="col-sm-2"><strong>Name</strong></div>
+        <div class="col-sm-3" ><input type="text" pInputText  formControlName="Name"/></div>
+        <div class="col-sm-4 error"  *ngIf="register_product.get('Name').hasError('required')  &&  register_product.get('Name').touched"> <span class="fa fa-close"></span>  Name is required </div>
+        
+      </div>
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>PacksperBox</strong></div>
+      <div class="col-sm-3"><input type="text" pInputText formControlName="PacksPerBox"pInputText pattern="[0-9]{0,10}" /></div>
+      <div class="col-sm-5 error"  *ngIf="register_product.get('PacksPerBox').hasError('required') && (register_product.get('PacksPerBox').touched ) "> <span class="fa fa-close"></span> PacksperBox is required </div>
+      <div class="col-sm-5 error"  *ngIf="register_product.get('PacksPerBox').hasError('pattern') "> <span class="fa fa-warning"></span> wrong pattern </div>
+    </div>
+    <hr/>
+  
+   
+
+
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>Barcode</strong></div>
+      <div class="col-sm-3"><input type="text" pInputText formControlName="Barcode"/></div>
+      <div class="col-sm-5 error"  *ngIf="register_product.get('Barcode').hasError('required')  &&  register_product.get('Barcode').touched"> <span class="fa fa-close"></span> barcode is required </div>
+      
+    </div>
+    <hr/>
+    
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>Drug Group</strong></div>
+      <div class="col-sm-3"><input type="text" pInputText formControlName="DrugGroup" /></div>
+      <div class="col-sm-5 error"  *ngIf="register_product.get('DrugGroup').hasError('required')  &&  register_product.get('DrugGroup').touched"> <span class="fa fa-close"></span> drug group  is required </div>
+     
+    </div>
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>Formulae</strong></div>
+      <div class="col-sm-3"><input type="text" pInputText formControlName="Formulae" /></div>
+      <div class="col-sm-5 error"  *ngIf="register_product.get('Formulae').hasError('required')  &&  register_product.get('Formulae').touched"> <span class="fa fa-close"></span> Formulae is required </div>
+     
+    </div>
+  
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>UnitsperPack</strong></div>
+      <div class="col-sm-3"><input type="text"  formControlName="UnitsinPack" pInputText pattern="[0-9]{0,10}" /></div>
+      <div class="col-sm-5 error"  *ngIf="register_product.get('UnitsinPack').hasError('required') && (register_product.get('UnitsinPack').touched ) "> <span class="fa fa-close"></span> UnitsperPack is required </div>
+      <div class="col-sm-5 error"  *ngIf="register_product.get('UnitsinPack').hasError('pattern') "> <span class="fa fa-warning"></span> wrong pattern </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>Packing</strong></div>
+      <div class="col-sm-3"><input type="text"  formControlName="Packing"  pInputText pattern="[0-9]{0,10}" /></div>
+      <div class="col-sm-5 error"  *ngIf="register_product.get('Packing').hasError('required') && (register_product.get('Packing').touched ) "> <span class="fa fa-close"></span> Packing is required </div>
+      <div class="col-sm-5 error"  *ngIf="register_product.get('Packing').hasError('pattern') "> <span class="fa fa-warning"></span> wrong pattern </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>Min Quantity  </strong></div>
+      <div class="col-sm-3"><input type="text"  formControlName="MinQuantity"   pInputText pattern="[0-9]{0,10}" /></div>
+      <div class="col-sm-5 error"  *ngIf="register_product.get('MinQuantity').hasError('required') && (register_product.get('MinQuantity').touched ) "> <span class="fa fa-close"></span> MinQuantity is required </div>
+      <div class="col-sm-5 error"  *ngIf="register_product.get('MinQuantity').hasError('pattern') "> <span class="fa fa-warning"></span> wrong pattern </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>BoxperCarton</strong></div>
+      <div class="col-sm-3"><input type="text"  formControlName="BoxPerCarton" pInputText pattern="[0-9]{0,10}" /></div>
+      <div class="col-sm-5 error"  *ngIf="register_product.get('BoxPerCarton').hasError('required') && (register_product.get('BoxPerCarton').touched ) "> <span class="fa fa-close"></span> Box per Carton is required </div>
+      <div class="col-sm-5 error"  *ngIf="register_product.get('BoxPerCarton').hasError('pattern') "> <span class="fa fa-warning"></span> wrong pattern </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-sm-2"><strong>RackNo</strong></div>
+      <div class="col-sm-3"><input type="text"  formControlName="RackNo" pInputText/></div>
+      <div class="col-sm-5 error"  *ngIf="register_product.get('RackNo').hasError('required')&&register_product.get('RackNo').touched"> <span class="fa fa-close"></span> Rack No is required </div>
+      
+    </div>
+   
+
+    <div class="row mb-3">
+     
+      
+    </div>
+  
+   
+    
+    <div class="row mb-3">
+        <div class="col-sm-1">
+      <button pButton type="submit" label="{{buttonname}}" [disabled]="register_product.invalid" class="ui-button-success"></button>
+        </div>
+    </div>
+   
+  </p-panel>
+</form>
+
+
+  </div>
+</div>
