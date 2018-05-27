@@ -33,6 +33,9 @@ background-color: #00A875 ;
  margin-top:30px;
  
 }
+.allign{
+    margin-left: 30%;
+}
 .labelyo{
 margin-left: 1%;
 }
@@ -42,6 +45,10 @@ margin-left: 10%;
 .labelyo2{
 margin-left: 10%;
 }
+.labelyop{
+    margin-left: 2%;
+    }
+    
 .toop{
 margin-top: 5%;
 }

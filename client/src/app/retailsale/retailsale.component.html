@@ -5,10 +5,7 @@
           <p-panel header="Retail Invoice" [ngStyle]="{background:'red'}">
             <div class="form-group row">
               <label for="colFormLabel" class="labelyo col-form-label">Customer Name:</label>
-              <select class="custom-select ww"> 
-                  <option selected>ID</option>
-                  <option value="1">1</option>
-                </select>
+              
               <div class="col-sm-3">
                  
                 <select class="form-control"  name="Type" >
@@ -35,19 +32,21 @@
             </div>
             <div class="form-group row">
                 <label for="colFormLabel" class="labelyo col-form-label">Doctor's Name:</label>
-                <select class="custom-select ww3">
-                    <option selected>ID</option>
-                    <option value="1">1</option>
-                  </select>
                 <div class="col-sm-3">
-                   
                   <select class="form-control"  placeholder="Name" name="Type" >
-            
                     <option></option>
                                 <option *ngFor="let user of doc_list; let i = index;"  [ngValue]="Names" name="Names" >{{user.Firstname}} </option>
-                               
-                                </select>
+                 </select>
                    </div>
+                   <label for="colFormLabel" class="labelyop col-form-label ">Invoice No:</label>
+                   <label for="colFormLabel" class="col-form-label"><b style="margin-left: 5px">1</b></label>
+ 
+ 
+ 
+ 
+                   <label for="colFormLabel" class="col-form-label allign">Date:</label>
+                   <label for="colFormLabel" class="col-form-label"><b style="margin-left: 5px">{{date_val}}</b></label>
+
               </div>
 
               <div class="row">
@@ -61,14 +60,7 @@
                     <option value="Packs">Packs</option>
                     <option value="Boxes">Boxes</option>
                   </select>
-                  <label for="colFormLabel" class="labelyo col-form-label">Invoice No:</label>
-                  <label for="colFormLabel" class="col-form-label"><b>1</b></label>
-
-
-
-
-                  <label for="colFormLabel" class="labelyo col-form-label">Date:</label>
-                  <label for="colFormLabel" class="col-form-label"><b>{{date_val}}</b></label>
+                 
 
                   <label for="colFormLabel" class="labelyo col-form-label">Batch:</label>
                   <label for="colFormLabel" class="col-form-label"><b>1</b></label>
@@ -114,7 +106,7 @@
 
                               <div class="col-md-1 mb-1">
                                   <label style="font-size: 12px">Disc %</label>
-                                <div >  <input type="text" class="form-control" formControlName="Discount"    pattern="[0-9]{0,10}" /></div>
+                                <div >  <input type="text" class="form-control" formControlName="Discount"    pattern="[0-9]{1,2}" /></div>
                                   <div class="col-sm-5 error "  *ngIf="retailsale.get('Discount').hasError('required') && (retailsale.get('Discount').touched ) "> </div>
                                   <div class="col-sm-5 error"  *ngIf="retailsale.get('Discount').hasError('pattern') "> </div>
                                 </div>
@@ -123,7 +115,7 @@
                                   
                                   <div class="col-md-1 mb-1">
                                       <label style="font-size: 12px">GST %</label>
-                                     <div> <input type="text" class="form-control"  formControlName="GST"   pattern="[0-9]{0,10}" /></div>
+                                     <div> <input type="text" class="form-control"  formControlName="GST"   pattern="[0-9]{1,2}" /></div>
                                      <div class="col-sm-5 error "  *ngIf="retailsale.get('GST').hasError('required') && (retailsale.get('GST').touched ) || retailsale.get('GST').hasError('pattern') "></div>
                                       <div class="col-sm-5 error"  *ngIf=" "> </div>
                                     </div>
@@ -180,7 +172,7 @@
                                   <td>
                                       <input disabled [ngModelOptions]="{standalone: true}" class="form-control" type="text" id="newAttributeCode" [(ngModel)]
 
-="newAttribute.code"  />
+                                  ="newAttribute.code"  />
                                   </td>
                                   <td>
                                       <input disabled [ngModelOptions]="{standalone: true}" class="form-control" type="text" id="newAttributeProduct" [(ngModel)]
@@ -220,15 +212,15 @@
                     <div class="col-md-12" style="background:rgb(216, 228, 216)">
                         <label for="colFormLabel" class="labelyo col-form-label">Total:  </label>
                         <label for="colFormLabel" class="col-form-label"><b>{{price}}</b></label>
-</div>
-<div class="col-md-12" style="background:rgb(194, 223, 206)">
-    <label for="colFormLabel" class="labelyo col-form-label">GST:  </label>
-    <label for="colFormLabel" class="col-form-label"><b>{{gst}}</b></label>
-</div>
-<div class="col-md-12" style="background:rgb(157, 201, 168)">
-    <label for="colFormLabel" class="labelyo col-form-label">Discount:  </label>
-    <label for="colFormLabel" class="col-form-label"><b>{{discount}}</b></label>
-</div>
+                        </div>
+                        <div class="col-md-12" style="background:rgb(194, 223, 206)">
+                             <label for="colFormLabel" class="labelyo col-form-label">GST:  </label>
+                            <label for="colFormLabel" class="col-form-label"><b>{{gst}}</b></label>
+                            </div>
+                    <div class="col-md-12" style="background:rgb(157, 201, 168)">
+                         <label for="colFormLabel" class="labelyo col-form-label">Discount:  </label>
+                             <label for="colFormLabel" class="col-form-label"><b>{{discount}}</b></label>
+                    </div>
                       
 <div class="col-md-12" style="background:rgb(129, 180, 137)">
     <label for="colFormLabel" class="labelyo col-form-label"><h5>Net Value: </h5> </label>
