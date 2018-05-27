@@ -20,7 +20,7 @@
 }
 
 .invtot{
-    background-color: rgba(0, 168, 115, 0.178);
+    background-color: rgba(30, 190, 140, 0.877);
     height: 13%;
     width: 100%
 }
@@ -29,8 +29,9 @@
 }
 .btnadd{
 background-color: #00A875 ;
- width: 10%;
- margin-left: 90%;
+ width: 100%;
+ margin-top:30px;
+ 
 }
 .labelyo{
 margin-left: 1%;
@@ -87,3 +88,30 @@ opacity: 0.7;
            {
                border: 1px solid #00A874
            }     
+
+
+
+
+
+
+
+
+
+
+        .error{
+
+                         border: rgb(216, 62, 62) solid 1px;
+                       
+                    margin-left: 18%}
+          
+                    .error_lg{
+
+                        border: rgb(197, 118, 118) solid 1px;
+                        margin-left: 28%;
+                        margin-top: 4%;
+                      
+                   }
+
+                   input[type="text"][disabled]{
+                                    background : white;
+                   }

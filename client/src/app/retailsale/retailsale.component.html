@@ -1,7 +1,7 @@
 
 <div class = "egs">
 
-        <form novalidate (ngSubmit)="onSubmit(retailsale)" [formGroup]="retailsale" >
+        <form  (ngSubmit)="onSubmit(retailsale)" [formGroup]="retailsale"  >
           <p-panel header="Retail Invoice" [ngStyle]="{background:'red'}">
             <div class="form-group row">
               <label for="colFormLabel" class="labelyo col-form-label">Customer Name:</label>
@@ -19,6 +19,19 @@
                               </select>
                   
               </div>
+
+             
+                           
+              <label for="colFormLabel" class="labelyo col-form-label">Product Name:</label>
+              <div class="col-sm-5">
+                <select  class="form-control"  name="Type" (click)='onClickName($event.target.value)'>
+                  
+                  <option ></option>
+                  <option >asdasd</option>
+                              <option *ngFor="let user of pro_list; let i = index;"  [ngValue]="Names" name="Names" >{{user.Name}} </option>
+                              </select>
+              </div>
+
             </div>
             <div class="form-group row">
                 <label for="colFormLabel" class="labelyo col-form-label">Doctor's Name:</label>
@@ -48,123 +61,179 @@
                     <option value="Packs">Packs</option>
                     <option value="Boxes">Boxes</option>
                   </select>
-                  <label for="colFormLabel" class="labelyo1 col-form-label">Invoice No:</label>
+                  <label for="colFormLabel" class="labelyo col-form-label">Invoice No:</label>
                   <label for="colFormLabel" class="col-form-label"><b>1</b></label>
 
 
 
 
-                  <label for="colFormLabel" class="labelyo2 col-form-label">Date:</label>
+                  <label for="colFormLabel" class="labelyo col-form-label">Date:</label>
                   <label for="colFormLabel" class="col-form-label"><b>{{date_val}}</b></label>
+
+                  <label for="colFormLabel" class="labelyo col-form-label">Batch:</label>
+                  <label for="colFormLabel" class="col-form-label"><b>1</b></label>
+
+
+                  <label for="colFormLabel" class="labelyo col-form-label">Expiry:</label>
+                  <label for="colFormLabel" class="col-form-label"><b>May 26 2018</b></label>
                       </div>
-                      <div class="form-row toop">
-                          <div class="col-md-4 mb-3">
-                            <label style="font-size: 12px">Product Name</label>
-                           
 
-                            <select class="form-control"  name="Type" >
-            
-                              <option></option>
-                                          <option formControlName= "ProductName" *ngFor="let user of pro_list; let i = index;"  [ngValue]="Product" name="Product" >{{user.Name}} </option>
-                                         
-                                          </select>
 
+
+
+
+                    
+                      
+                        <div class="form-row toop">
                          
 
 
+                            <div class="col-md-5 mb-1">
+                                <div> <label style="font-size: 12px">Product Name</label>
+                                 <input type="text" class="form-control" id="validationCustom02" formControlName="Name"  value="0"   disabled /></div>
+                                 <div class="col-sm-4 error_lg"  *ngIf="retailsale.get('Name').hasError('required')  &&  retailsale.get('Name').touched"> </div>
+        
+                                </div>
 
 
 
-
-
-
-                          </div>
                           <div class="col-md-1 mb-1">
                             <label style="font-size: 12px">Quantity</label>
-                            <input type="text" class="form-control" formControlName="Quantity" id="validationCustom02"  value="0" required>
-                            <div class="valid-feedback">
-                              Looks good!
-                            </div>
+                           <div> <input type="text" class="form-control" formControlName="Quantity" id="validationCustom02"    pattern="[0-9]{1,10}"  [value]="0"/></div>
+                            <div class="col-sm-5 error "  *ngIf="retailsale.get('Quantity').hasError('required') && (retailsale.get('Quantity').touched) || (retailsale.get('Quantity').hasError('pattern')) || (retailsale.get('Quantity').value <=0 ) "> </div>
+                            
                           </div>
                           <div class="col-md-1 mb-1">
                               <label style="font-size: 12px">Packing</label>
-                              <input type="text" class="form-control" formControlName="Packing" id="validationCustom02"  value="0" required>
+                              <input type="text" class="form-control"  id="validationCustom02"  [value]="0" required>
                               <div class="valid-feedback">
                                 Looks good!
                               </div>
                             </div>
-                            <div class="col-md-1 mb-1">
-                                <label style="font-size: 12px">Batch</label>
-                                <input type="text" class="form-control" id="validationCustom02"   value="0" required>
-                                <div class="valid-feedback">
-                                  Looks good!
-                                </div>
-                              </div>
+                         
+
                               <div class="col-md-1 mb-1">
                                   <label style="font-size: 12px">Disc %</label>
-                                  <input type="text" class="form-control" formControlName="Discount" id="validationCustom02"  value="0" required>
-                                  <div class="valid-feedback">
-                                    Looks good!
-                                  </div>
+                                <div >  <input type="text" class="form-control" formControlName="Discount"    pattern="[0-9]{0,10}" /></div>
+                                  <div class="col-sm-5 error "  *ngIf="retailsale.get('Discount').hasError('required') && (retailsale.get('Discount').touched ) "> </div>
+                                  <div class="col-sm-5 error"  *ngIf="retailsale.get('Discount').hasError('pattern') "> </div>
                                 </div>
-                                <div class="col-md-1 mb-1">
-                                    <label style="font-size: 12px">Expiry</label>
-                                    <input type="text" class="form-control" id="validationCustom02"  value="0" required>
-                                    <div class="valid-feedback">
-                                      Looks good!
-                                    </div>
-                                  </div>
+                                
+                               
+                                  
                                   <div class="col-md-1 mb-1">
                                       <label style="font-size: 12px">GST %</label>
-                                      <input type="text" class="form-control" id="validationCustom02" formControlName="GST"  value="0" required>
-                                      <div class="valid-feedback">
-                                        Looks good!
-                                      </div>
+                                     <div> <input type="text" class="form-control"  formControlName="GST"   pattern="[0-9]{0,10}" /></div>
+                                     <div class="col-sm-5 error "  *ngIf="retailsale.get('GST').hasError('required') && (retailsale.get('GST').touched ) || retailsale.get('GST').hasError('pattern') "></div>
+                                      <div class="col-sm-5 error"  *ngIf=" "> </div>
                                     </div>
+                                    
+
                                     <div class="col-md-2 mb-1">
-                                        <label style="font-size: 12px">Price</label>
-                                        <input type="text" class="form-control" id="validationCustom02" formControlName="Price"  value="0" required>
-                                        <div class="valid-feedback">
-                                          Looks good!
-                                        </div>
+                                       <div> <label style="font-size: 12px">Price</label>
+                                        <input type="text" class="form-control" id="validationCustom02" formControlName="Price"  value="0" pattern="[0-9]{0,10}" /></div>
+                                        <div class="col-sm-5 error_lg"  *ngIf="retailsale.get('Price').hasError('required') && (retailsale.get('Price').touched ) || retailsale.get('GST').hasError('pattern') "></div>
+                                        
+                                       </div>
+                                       <div class="col-sm-1">
+                                       <button type="text" (click)="addFieldValue()" class="btn btn-primary btnadd" [disabled]="retailsale.invalid" >Add</button>
                                       </div>
-                                      
                       </div>
-                      <button type="button" class="btn btn-primary btnadd" >Add</button>
-                      <table class="table">
+                      
+                      <table class="table table-striped table-bordered">
                           <thead>
-                            <tr>
-                              <th scope="col">S.No</th>
-                              <th scope="col">Product</th>
-                              <th scope="col">Quantity</th>
-                              <th scope="col">Discount</th>
-                              <th scope="col">Price</th>
-                            
-                            </tr>
+                              <tr>
+                                  <th>SN</th>
+                                  <th>Product</th>
+                                  <th>Quantity</th>
+                                  <th>Discount</th>
+                                  <th>Price</th>
+                                  <th>Action</th>
+                              </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <th scope="row">1</th>
-                              <td>dvxvx</td>
-                              <td>xdvxv</td>
-                              <td>xvxddxv</td>
-                              <td>xvxddxv</td>
-                              
-                            </tr>
+                              <tr *ngFor="let field of fieldArray; let i = index">
+                                  <td>
+                                      <input disabled [ngModelOptions]="{standalone: true}" [(ngModel)]="field.code" class="form-control" type="text" name="{{field.code}}"   />
+                                  </td>
+                                  <td>
+                                      <input disabled [ngModelOptions]="{standalone: true}" [(ngModel)]="field.product" class="form-control" type="text" name="{{field.product}}" />
+                                  </td>
+                                  <td>
+                                      <input disabled  [ngModelOptions]="{standalone: true}" [(ngModel)]="field.quantity" class="form-control" type="text" name="{{field.quantity}}" 
+
+/>
+                                  </td>
+                                  <td>
+                                      <input disabled [ngModelOptions]="{standalone: true}" [(ngModel)]="field.discount" class="form-control" type="text" name="{{field.discount}}" 
+
+/>
+                                  </td>
+                                  <td>
+                                      <input disabled [ngModelOptions]="{standalone: true}" [(ngModel)]="field.price" class="form-control" type="text" name="{{field.price}}" />
+                                  </td>
+                                  <td>
+                                      <button class="btn btn-default"  type="button" (click)="deleteFieldValue(i)">Delete</button>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>
+                                      <input disabled [ngModelOptions]="{standalone: true}" class="form-control" type="text" id="newAttributeCode" [(ngModel)]
+
+="newAttribute.code"  />
+                                  </td>
+                                  <td>
+                                      <input disabled [ngModelOptions]="{standalone: true}" class="form-control" type="text" id="newAttributeProduct" [(ngModel)]
+
+="newAttribute.product"  />
+                                  </td>
+                                  <td>
+                                      <input disabled [ngModelOptions]="{standalone: true}" class="form-control" type="text" id="newAttributetyQuantity" [(ngModel)]
+
+="newAttribute.quantity"  />
+                                  </td>
+                                  <td>
+                                      <input disabled [ngModelOptions]="{standalone: true}" class="form-control" type="text" id="newAttributeDiscount" [(ngModel)]
+
+="newAttribute.discount"  />
+                                  </td>
+                                  <td>
+                                      <input disabled [ngModelOptions]="{standalone: true}" class="form-control" type="text" id="newAttributePrice" [(ngModel)]
+
+="newAttribute.price"  />
+                                  </td>
+
+
+                                  <td>
+                                      <button class="btn btn-default"  type="button" (click)="deleteFieldValues(i)">Reset</button>
+                                  </td>
+                              </tr>
                           </tbody>
-                        </table>
+                      </table>
+                    
 
 
                     
                   </div>
                   <div class="col-sm-4 border invright" >
                     <div class="invhead"></div>
-                      <h6 class="inv1">Total :</h6>
-                      <h6 class="inv1">GST Total :</h6>
-                      <h6 class="inv1">Discount :</h6>
-                        <div class="border invtot">
-                            <h5 class="inv1">NET VALUE :</h5>
-                        </div>
+                    <div class="col-md-12" style="background:rgb(216, 228, 216)">
+                        <label for="colFormLabel" class="labelyo col-form-label">Total:  </label>
+                        <label for="colFormLabel" class="col-form-label"><b>{{price}}</b></label>
+</div>
+<div class="col-md-12" style="background:rgb(194, 223, 206)">
+    <label for="colFormLabel" class="labelyo col-form-label">GST:  </label>
+    <label for="colFormLabel" class="col-form-label"><b>{{gst}}</b></label>
+</div>
+<div class="col-md-12" style="background:rgb(157, 201, 168)">
+    <label for="colFormLabel" class="labelyo col-form-label">Discount:  </label>
+    <label for="colFormLabel" class="col-form-label"><b>{{discount}}</b></label>
+</div>
+                      
+<div class="col-md-12" style="background:rgb(129, 180, 137)">
+    <label for="colFormLabel" class="labelyo col-form-label"><h5>Net Value: </h5> </label>
+    <label for="colFormLabel" class="col-form-label"><b>{{net}}</b></label>
+</div>
                         <p class="inv1" style="margin-top: 3%">Payment Mode <p>
                         <div class="form-check">
                             <input class="form-check-input " type="radio"  checked>
@@ -182,5 +251,6 @@
             
           </p-panel>
           </form>
+          
         </div>
         

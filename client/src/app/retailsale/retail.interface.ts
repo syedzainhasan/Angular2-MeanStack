@@ -3,7 +3,7 @@ export interface Retailsale{
 
 
     InvId :Number;
-    Product:string;
+    Name:string;
     Quantity:Number;
     Discount:Number;
     Price:Number;

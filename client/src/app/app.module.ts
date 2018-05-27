@@ -32,6 +32,20 @@ import { RetailsaleComponent } from './retailsale/retailsale.component';
 import { WholesaleComponent } from './wholesale/wholesale.component';
 import { InvoiceWholesaleComponent } from './invoice-wholesale/invoice-wholesale.component';
 
+
+
+
+
+
+
+
+import { FormsModule } from '@angular/forms';
+
+
+
+
+
+
 @NgModule({
   declarations: [
     
@@ -53,6 +67,7 @@ import { InvoiceWholesaleComponent } from './invoice-wholesale/invoice-wholesale
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    FormsModule,
     HttpModule,
     ButtonModule,
     PanelMenuModule,
